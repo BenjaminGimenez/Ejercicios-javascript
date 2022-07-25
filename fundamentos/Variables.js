@@ -5,7 +5,7 @@
 
 //3 formas de llamar a las variables
 
-var nombre='benjamin'
+var nombre='benjamin' //ya no se usa
 
 let apellido='gimenez' //usamos let cuando queremos que la variable cambie
 
@@ -20,8 +20,8 @@ let cliente='pochi rodriguez'
 let numero1=4
 let numero2=7
 let numero3=9
-//Boolean: son los tipos de datos que son verdaderos o falsos
 
+//Boolean: son los tipos de datos que son verdaderos o falsos
 let comer=true
 let comprar=false
 
@@ -91,15 +91,36 @@ console.log(
 
 console.log("El resultado si numero 1 es distinto de numero 2", num1 != num2);
 
+console.log("Mi nombre es " + nombre + " " + apellido);
 
-let nombrecito = prompt("Escribe tu nombre");
-let edad = prompt("Ingresa tu edad");
+// let nombrecito = prompt("Escribe tu nombre");
+// let edad = prompt("Ingresa tu edad");
 
-console.log("=======Datos de usuario============");
-console.log("Nombre de usuario: " + nombrecito);
-console.log("Edad: " + edad);
-console.log("====================================");
+// console.log("=======Datos de usuario============");
+// console.log("Nombre de usuario: " + nombrecito);
+// console.log("Edad: " + edad);
+// console.log("====================================");
 
+
+// Ejercicio de practica
+
+// La Escuela RollingStar solicita un sistema, 
+// donde le permita a sus estudiantes presentarse de una manera más interactiva y eficiente , 
+// por eso deciden acudir a un programador para crear un sistema, 
+// en el cual se podrá ingresar el nombre, edad, actividad favorita y 
+// deporte favorito en una tarjeta de presentación predeterminada
+
+let nameStudent = prompt('escribe tu nombre completo')
+let age = prompt('que edad tenes?')
+let Activity = prompt('Cual es tu actividad favorita?')
+let Deportes = prompt('Cual es tu deporte favorito?')
+
+console.log('!======> Datos del alumno <======!')
+console.log('Nombre del alumno: ' + nameStudent)
+console.log('Edad del alumno ' + age)
+console.log('Actividad favorita ' + Activity)
+console.log('Deporte favorito ' + Deportes)
+console.log('<=======================>')
 
 
 
