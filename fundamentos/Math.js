@@ -48,3 +48,4 @@ console.log(Math.round(num * 100) / 100);
 //obtener numero con dos decimales
 let decimal = parseFloat(num).toFixed(2);
 console.log(parseFloat(decimal));
+ 

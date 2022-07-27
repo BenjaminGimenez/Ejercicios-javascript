@@ -61,6 +61,13 @@ Devuelve en consola si el texto contiene la palabra "elementos"
 
 */
 
+let parrafo = 'React te ayuda a crear interfaces de usuario interactivas de forma sencilla. Diseña vistas simples para cada estado en tu aplicación, y React se encargará de actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien'
+
+console.log(parrafo.replace('React','Esta libreria'))
+
+console.log(parrafo.includes('eficiente'))
+console.log(parrafo.includes('elementos'))
+
 /*
 Tarea 2:
  indexOf()
@@ -69,3 +76,32 @@ Dada la frase: "Hoy es un buen día para aprender"
 Separa en un arreglo cada palabra
 Crea una nueva frase basandote en la anterior que diga: "Hoy es un buen día"
  */
+
+const fraseNueva = "Hoy es un buen día para aprender"
+
+console.log(fraseNueva.split(" ")) //separamos en un arreglo
+
+//==== indexOff ====//
+
+const corte = fraseNueva.indexOf("para");
+console.log(fraseNueva.slice(0, corte));
+
+const frasecita = fraseNueva.slice(0, corte).trim();
+console.log(frasecita)
+
+//2 formas de cortar y mostrar la frase nueva
+
+// Tarea 3:
+
+// Capitaliza la siguiente palabra: "marmota"
+
+let palabra = 'marmota'
+
+let capitalizada = palabra.charAt(0).toUpperCase() + palabra.slice(1)
+console.log(capitalizada)
+
+/*con el charat me posiciono en la primera letra, con el toUpperCase la convierto en mayuscula
+y con el slice sumo el resto de la palabra para juntar todo.
+*/
+
+
