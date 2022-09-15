@@ -113,3 +113,104 @@ tareas.unshift('Estudiar React native')
 
 //reemplazando ultimo elemento
 tareas.splice(2,1,"Hacer tarea para el 24 de septiembre")
+
+//========================================================
+
+//practica de FUNCIONES
+
+/*
+-Crear una función llamada agregarProducto que pida al usuario ingresar un producto y lo guarde en un arreglo.
+
+-Se puede hacer que la función pida ingresar productos una y otra vez hasta que se presione cancelar en el prompt o se deje vacio el campo y se presione aceptar.
+Al final la función debe mostrar por consola la lista de los productos ingresados.
+*/
+
+let productos = ['jabon', 'aceite', 'detergente', 'azucar']
+
+//agregando productos
+function agregarProducto(){
+    let producto = prompt('ingrese el nombre del producto que desee agregar')
+
+    while (producto) {
+
+        productos.push(producto)
+
+        producto = prompt('ingrese el nombre del producto que desee agregar')
+    }   
+    listarProductos(productos)
+    }
+
+//listando productos
+/*
+para que sea una funcion reeutilizable, ponemos como argumento un arreglo, que seria el arreglo de productos 
+que ya tenemos, arreglo.length < 0 ---> estamos preguntando si existe algo dentro del arreglo.
+
+usamos la funcion despues del while de la primera funcion asi, cuando ejecute, me liste los productos una vez
+despues de agregarlos.
+
+*/
+function listarProductos(arreglo){
+
+if(arreglo.length > 0){
+    console.log('======listado de peliculas========')
+    
+    arreglo.map(function(item, index){
+        console.log(`${index + 1} - ${item} `)
+    })
+
+    console.log('========================')
+}else{
+    console.log('no hay productos para agregar')
+}
+}
+
+//filtrando productos
+function filtrarProductos(termino=prompt('ingrese el producto que desee buscar')){
+
+    let newProductos = productos.filter(function(productito){
+        return productito.includes(termino)
+    })
+
+    if(newProductos.length > 0){
+
+        listarProductos(newProductos)
+
+    }else{
+        console.warn('no hay resultados en su busqueda')
+    }
+}
+
+//===========================================================
+
+
+
+/*
+-Crear una función anónima que reciba como parámetros nombre, apellido, domicilio y correo electrónico.
+
+-La función debe recibir los parámetros y mostrar en el navegador el siguiente mensaje: 'Me llamo <nombre>
+ <apellido> vivo en <domicilio>, si deseas contactarme te dejo mi correo electrónico <email>. Que tengas un buen día.
+Para mostrar texto en el navegador debemos usar document.write()
+*/
+
+
+
+
+
+
+
+//practica de ARREGLOS Y FUNCIONES
+
+/*
+- Crear una aplicación con javascript de un carrito de compras
+
+- La aplicación debe poder hacer lo siguiente:
+
+- Agregar productos al carrito (agregarlos hasta que se cancele el prompt)
+
+- Eliminar un producto del carrito (recibe el nombre del producto a eliminar)
+
+- Filtrar elementos del carrito según una palabra o término ingresado
+
+- Listar todos los productos que estén en el carrito en orden alfabético
+Adjuntos
+*/
