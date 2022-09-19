@@ -54,9 +54,12 @@ let numerosCuadrados = numeros.map(function (numero) {
 //podemos solo iterar
 //el index es otro agumento y representa la posicion de cada elemento en el arreglo(podemos agregarlo o no)
 
+/* 
+
 alumnos.map(function (alumno, index) {
   console.log(`${index + 1} - nombre: ${alumno}`)
 })
+*/
 
   //ejercicio practico 
 
@@ -109,6 +112,7 @@ function listarPeliculas(arreglo) {
 /*
 igualamos el parametro(termino) para que el usuario lo ingrese directamente por un prompt.
 */ 
+
 //filtrar peliculas
 function filtrarPeliculas(termino = prompt("Ingrese el término a buscar")) {
   let newPeliculas = peliculas.filter(function (pelicula) {
@@ -119,5 +123,163 @@ function filtrarPeliculas(termino = prompt("Ingrese el término a buscar")) {
     listarPeliculas(newPeliculas);
   } else {
     console.warn("No hay resultados para la búsqueda");
+  }
+}
+
+//Función que evalua si una película existe
+
+const buscarPelicula=function(titulo){
+
+  let existePelicula = peliculas.find(function(pelicula){
+
+    return pelicula === titulo.toUpperCase()
+
+  })
+
+ if (existePelicula) {
+
+  return true
+  
+ }else{
+
+  return false
+
+ }
+}
+
+//borrar una pelicula
+
+const borrarPelicula=function(){
+
+  let titulo=prompt('ingrese la pelicula a eliminar')
+
+  let indice=peliculas.indexOf(titulo.toUpperCase())
+
+  if (titulo >=0) {
+
+    let validar = confirm(`esta seguro que desea eliminar ${peliculas[indice]} ?`)
+
+    if (validar) {
+      peliculas.splice(indice, 1);
+      alert("Película eliminada 🤙");
+    }
+  } else {
+    alert("Película no encontrada 😞");
+    
+  }
+}
+
+
+//===========================================================
+
+//juego piedra, papel o tijera
+ 
+let opciones = ['PIEDRA', 'PAPEL', 'TIJERA']
+
+//a las variables le doy un valor null, por que todavia no se a donde ni con que valor las voy a usar
+let jugador = null
+let bot = null
+
+//funcion para que el bot eliga aleatoraiamente las opciones
+
+/*
+aplicamos matg, y con el round redondeamos para que no me de numeros decimales, y con el random
+para que me de los numeros aleatoriamente
+*/
+
+function numeroRandom(){
+
+  return Math.round(Math.random()*2)
+}
+
+//funcion para iniciar el juego
+
+function playGame(){
+
+//determinar valor para la variable bot
+
+bot = numeroRandom()
+
+//determinar valor para el jugador
+
+jugador=parseInt(prompt('ingrese la opcion (PIEDRA = 0 | PAPEL = 1 | TIJERA = 2 )'))
+
+//evaluamos que el usuario ingrese un numero, y no cualquier cosa
+if(isNaN(jugador)){
+
+  return alert('ingrese una opcion valida')
+
+}
+
+//evaluamos que las opciones sean correctas
+
+if(jugador >=0 && jugador <=2){
+
+//evaluamos los resultados, de los datos obtenidos por el jugador y el bot
+
+switch (true) {
+  case jugador ===0 && bot ===2:
+    mensajeJuego("ganaste")
+    break;
+
+  case jugador ===1 && bot ===0:
+    mensajeJuego("ganaste")
+      break;
+
+  case jugador ===2 && bot ===1:
+    mensajeJuego("ganaste")
+        break;
+
+  case jugador === bot:
+    mensajeJuego("empate")
+          break;
+  default:
+    mensajeJuego("perdiste")
+    break;
+}
+}else{
+  alert('debe ingresar un valor correcto')
+}
+
+//para mostrar los resultados en consola
+console.log(`Jugador: ${opciones[jugador]} | bot: ${opciones[bot]}`);
+
+}
+
+//funcion oara usar sweet alert
+
+/*
+reemplazamos en el swith de arriba el mensaje que retorna por la funcion del sweet alert
+*/
+
+const mensajeJuego=function(mensaje){
+
+  switch (mensaje) {
+    case "ganaste":
+      Swal.fire({
+        icon: "success",
+        title: "GANASTE",
+        text: `${opciones[jugador]} vence a ${opciones[bot]}`,
+        footer: "intenta seguir ganando"
+      })
+      break;
+
+      case "empate":
+        Swal.fire({
+          icon: "info",
+          title: "EMPATE",
+          text: `${opciones[jugador]} es igual a ${opciones[bot]}`,
+          footer: "prueba suerte para la proxima"
+        })
+      break;
+
+      case "perdiste":
+        Swal.fire({
+          icon: "error",
+          title: "PERDISTE",
+          text: `${opciones[bot]} vence a ${opciones[jugador]}`,
+          footer: "prueba suerte para la proxima"
+        })
+      break;
   }
 }

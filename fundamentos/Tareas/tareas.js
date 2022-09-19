@@ -183,7 +183,6 @@ function filtrarProductos(termino=prompt('ingrese el producto que desee buscar')
 //===========================================================
 
 
-
 /*
 -Crear una función anónima que reciba como parámetros nombre, apellido, domicilio y correo electrónico.
 
@@ -214,3 +213,26 @@ Para mostrar texto en el navegador debemos usar document.write()
 - Listar todos los productos que estén en el carrito en orden alfabético
 Adjuntos
 */
+
+//CARRITO DE COMPRAS
+
+let regalos = ['pelota', 'peluche', 'camiseta de futbol', 'figura de accion']
+
+//agregar regalos
+
+function agregarRegalos (){
+
+    let regalitos = prompt('agregue al carrito los regalos que sea comprar')
+
+    while(regalitos){
+
+        regalitos.push(regalos)
+
+        regalitos = prompt('agregue al carrito los regalos que sea comprar')
+
+    }
+
+}
+
+
+
