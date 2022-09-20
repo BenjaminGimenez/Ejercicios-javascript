@@ -235,4 +235,48 @@ function agregarRegalos (){
 }
 
 
+//=======================================================================
 
+//ejercicios de OBJETOS
+
+/*
+-Crear un objeto llamado persona que contenga los siguientes atributos:
+
+-Nombre
+-Edad
+-DNI
+-Domicilio
+-Hijos (cantidad)
+-Profesión
+
+Agregar Métodos:
+
+-Saludar ( mensaje de presentación en navegador o consola)
+
+-Listar (muestra la lista con los datos de la persona)
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+//EJERCICIO DE ARREGLO DE OBJETOS
+
+/*
+Crear un arreglo de objetos que contenga datos de películas como:
+
+-Título
+-Género
+-Año
+-sinopsis
+
+-Crea una función que permita mostrar en una lista cada película con sus datos.
+*/
