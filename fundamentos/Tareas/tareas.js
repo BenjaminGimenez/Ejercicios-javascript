@@ -257,15 +257,27 @@ Agregar Métodos:
 
 */
 
+let persona = {
+    nombre: "Mariano",
+    DNI: 41059184,
+    domicilio: "Fortunata Garcia 824",
+    Hijos: "no tiene",
+    Profesion: "Desarrollador Web",
+
+    saludar(){
+        console.log(`Hola me llamo ${this.nombre} y soy ${this.Profesion}`)
+    }
+}
 
 
+//listado de datos
+for (const key in persona) {
+    
+    console.log(`${key} : ${persona[key]}`)
+}
 
 
-
-
-
-
-
+//===================================================
 
 
 //EJERCICIO DE ARREGLO DE OBJETOS
@@ -280,3 +292,16 @@ Crear un arreglo de objetos que contenga datos de películas como:
 
 -Crea una función que permita mostrar en una lista cada película con sus datos.
 */
+
+let peliculas = [
+    {id:1, Titulo:"Harry Potter", Genero:"Fantastica", Año: 2010, Sinopsis:" El día de su cumpleaños, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. "},
+    {id:2, Titulo:"Los Vengadores", Genero:"Heroica", Año: 2015, Sinopsis:"Los héroes más poderosos de la tierra juntos. Cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial"},
+    {id:3, Titulo:"Love Rosie", Genero:"Amor", Año: 2012, Sinopsis:"Rosie y Alex son, desde su infancia, los mejores amigos del mundo. Sin embargo, en los últimos días de instituto, una serie de acontecimientos los distancia anímica y físicamente."},
+    {id:4, Titulo:"Batman", Genero:"Drama -  accion", Año: 2022, Sinopsis:"En su segundo año luchando contra el crimen, Batman explora la corrupción existente en la ciudad de Gotham y el vínculo de esta con su propia familia."},
+]
+
+
+//listado de peliculas
+peliculas.map(function(pelicula){
+    console.log(pelicula.Titulo)
+})
